@@ -1,0 +1,179 @@
+create table activity_flag(
+id serial primary key,
+employed text 
+);
+
+create table positions(
+id serial primary key,
+work_pos text,
+min_salary integer,
+max_salary integer
+);
+
+create table employees ( 
+id serial primary key,
+emp_name text,
+emp_pos_id integer,
+emp_salary integer,
+date_of_start text,
+employed integer,
+CONSTRAINT fk_emp_pos_id
+      FOREIGN KEY(emp_pos_id)
+	  REFERENCES positions(id),
+CONSTRAINT fk_employed_id
+      FOREIGN KEY(employed)
+	  REFERENCES activity_flag(id)
+
+);
+
+drop table activity_flag ;
+drop table positions ;
+drop table employees ;
+
+insert into positions (
+work_pos ,
+min_salary ,
+max_salary 
+)
+values ( 
+'Lead developer',
+10000,
+12000
+);
+
+insert into positions (
+work_pos ,
+min_salary ,
+max_salary 
+
+)
+values ( 
+'Developer',
+6000,
+8000
+);
+
+
+insert into positions (
+work_pos ,
+min_salary ,
+max_salary 
+
+)
+values ( 
+'Trainee',
+3000,
+4000
+);
+
+insert into positions (
+work_pos ,
+min_salary ,
+max_salary 
+
+)
+values ( 
+'CEO',
+20000,
+25000
+);
+
+
+insert into positions (
+work_pos ,
+min_salary ,
+max_salary 
+
+)
+values ( 
+'HR business partner',
+8000,
+10000
+);
+
+insert into activity_flag (
+employed
+)
+values ( 
+'Yes'
+);
+
+insert into activity_flag (
+employed
+)
+values ( 
+'No'
+);
+
+insert into employees (
+emp_name ,
+emp_pos_id ,
+emp_salary ,
+date_of_start ,
+employed ) values (
+
+'Jon Jones',
+4,
+25000,
+'2015.02.20',
+1
+);
+
+insert into employees (
+emp_name ,
+emp_pos_id ,
+emp_salary ,
+date_of_start ,
+employed ) values (
+
+'Jessica Jones',
+5,
+9000,
+'2017.04.20',
+1
+);
+
+insert into employees (
+emp_name ,
+emp_pos_id ,
+emp_salary ,
+date_of_start ,
+employed ) values (
+
+'Peter Quill',
+1,
+12000,
+'2016.12.20',
+1
+);
+
+insert into employees (
+emp_name ,
+emp_pos_id ,
+emp_salary ,
+date_of_start ,
+employed ) values (
+
+'Bruce Banner',
+2,
+7500,
+'2020.07.25',
+1
+);
+
+insert into employees (
+emp_name ,
+emp_pos_id ,
+emp_salary ,
+date_of_start ,
+employed ) values (
+
+'Peter Parker',
+3,
+4000,
+'2022.02.20',
+1
+);
+
+select emp_name from employees e where emp_salary = (select max(emp_salary)from employees ) and employed = 1; 
+select emp_name from employees e where emp_salary = (select min(emp_salary)from employees ) and employed = 1; 
