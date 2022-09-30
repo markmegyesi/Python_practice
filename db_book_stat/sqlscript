@@ -1,0 +1,32 @@
+create table book_stat (
+id serial primary key,
+book_name text,
+words_cnt integer,
+rows_cnt integer,
+page_cnt integer,
+author text,
+release_date text
+);
+create table most_common_words(
+id serial primary key,
+book_stat_id integer,
+word_name text,
+word_cnt integer,
+CONSTRAINT fk_book_stat_most_comm
+      FOREIGN KEY(book_stat_id)
+	  REFERENCES book_stat(id)
+);
+/* foreign key - one to many,
+ * 				 one to one
+ * 				 many to many*/
+insert into book_stat (book_name,
+					   words_cnt,
+					   rows_cnt,
+					   page_cnt,
+					   author,
+					   release_date) values
+(%s, %s, %s, %s, %s, %s);
+insert into most_common_words (book_stat_id,
+							   word_name,
+							   word_cnt) values
+(%s, %s, %s)
