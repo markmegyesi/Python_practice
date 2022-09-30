@@ -1,0 +1,43 @@
+A books könyvtárban lévő file-ok segítségével
+írjatok olyan programot ami a következő feladatokat végrehajtja:
+
+A könyvekről készítsétek el a következő statisztikákat:
+Mivel minden könyv angolul van, így számomra nem a pontosság a lényeg, sokkal inkább a megközelítése a feladatnak.
+
+1. Szavak száma: minden 2-nél hosszabb karaktert szónak tekintek. (Mivel angol az I, an, a is stb kifejezések nem érdekelnek)
+2. Sorok száma
+3. Oldalak száma: egy oldal kb. 3000 karakter
+4. A könyv szerzőjét: a file-okban az Author: utáni rész (nem néztem meg, hogy minden egyes file-ban szerepel)
+5. A könyv megjelenési dátuma: Release Date: utáni rész (nem néztem meg, hogy minden file-ban )
+
+5 leggyakrabban előforduló szót is keressétek meg
+
+{
+    "szavak_száma": 10,
+    "sorok_száma": 100,
+    "oldalak_száma": 1000,
+    "könyv_szerzője": "mózes",
+    "könyv_megjelenés": 1989,
+    "könyv_címe": "biblia"
+}
+
+
+Könyvenként hozzátok létre a mérőszámokat. Az elkészült mérőszámnokat írjátok ki json file-okba: a könyvek neve legyen
+
+Próbáljátok meg előállítani a "Legek" statisztikáját:
+
+Leghosszabb könyv
+Legrövidebb könyv
+
+Töröljétek a legrövidebb könyvet, és a hozzá tartozó statisztikát is!
+Írjátok ki egy json-be, hogy melyik könyvet töröltétek
+
+Az előállított legek statisztikát írjátok ki egy json file-ba.
+
+{
+    "max": "Harry potter",
+    "min": "Lineáris algebra"
+}
+
+Kérlek titeket, hogy most már minden megoldásnál ügyeljetek arra, hogy függvényeket fejlesszetek, ne pedig
+soronként legyen leprogramozva a feladat.

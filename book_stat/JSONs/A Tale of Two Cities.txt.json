@@ -1,0 +1,16 @@
+{
+    "oldalak_szama": 259,
+    "leghosszabb_szo": "undistinguishable",
+    "szavak_szama": 109789,
+    "sorok_szama": 16273,
+    "konyv_szerzoje": " Charles Dickens",
+    "konyv_cime": " A Tale of Two Cities",
+    "kiadas_datuma": "January, 1994",
+    "leggyakoribb_szo": {
+        "the": 7577,
+        "and": 4921,
+        "his": 1942,
+        "that": 1846,
+        "was": 1766
+    }
+}
